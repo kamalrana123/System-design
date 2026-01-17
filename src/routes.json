@@ -1,18 +1,5 @@
 [
   {
-    "category": "Getting Started",
-    "items": [
-      { "path": "/", "title": "Introduction", "file": "basics/intro.md" }
-    ]
-  },
-  {
-    "category": "System Design",
-    "items": [
-      { "path": "/architecture", "title": "System Architecture", "file": "design/architecture.md" },
-      { "path": "/database", "title": "Database Design", "file": "design/database.md" }
-    ]
-  },
-  {
     "category": "Database Indexing",
     "items": [
       { "path": "/db-indexing", "title": "Indexing Intro", "file": "db-indexing/intro.md" },
