@@ -7,5 +7,5 @@ export default defineConfig({
   // 'base' should be your repository name for GitHub Pages, e.g., '/my-repo-name/'
   // If you are using a custom domain, '/' is fine.
   // Using './' ensures assets are linked relatively, which is often safe for HashRouter + GH Pages.
-  base: './', 
+  base: '/System-design', 
 })
