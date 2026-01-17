@@ -669,9 +669,9 @@ body {
 .doc-navigation {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 5rem;
-  padding-top: 2.5rem;
+  gap: 1rem;
+  margin-top: 4rem;
+  padding-top: 2rem;
   border-top: 1px solid var(--border-subtle);
 }
 
@@ -679,7 +679,7 @@ body {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  padding: 1.5rem;
+  padding: 1rem 1.25rem;
   border: 1px solid var(--border-highlight);
   border-radius: var(--radius-md);
   background-color: var(--bg-card);
@@ -688,21 +688,21 @@ body {
 
 .nav-btn:hover {
   border-color: var(--primary);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-glow);
 }
 
 .nav-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-dim);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   text-transform: uppercase;
   font-weight: 700;
   letter-spacing: 0.05em;
 }
 
 .nav-title {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-main);
   transition: color 0.2s;
