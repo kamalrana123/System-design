@@ -332,6 +332,28 @@ body {
   color: var(--text-main);
 }
 
+.nav-section.level-0 {
+  margin-bottom: 0.5rem;
+}
+
+.nav-section.level-1 {
+  margin-top: 0.25rem;
+}
+
+.nav-item.level-1 {
+  margin-left: 0.5rem;
+}
+
+.nav-item.level-2 {
+  margin-left: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.nav-section.level-1 .nav-title {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
 .nav-items-container {
   display: grid;
   grid-template-rows: 0fr;

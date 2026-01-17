@@ -7,13 +7,25 @@ export interface RouteItem {
 
 export interface RouteCategory {
   category: string;
-  items: RouteItem[];
+  children: (RouteItem | RouteCategory)[];
 }
 
 import rawRoutes from '../routes.json';
 
 // Cast the raw JSON to our typed structure
-export const routes: RouteCategory[] = rawRoutes;
+export const routes: (RouteItem | RouteCategory)[] = rawRoutes as any;
 
-// Helper to get a flat list of all route items for easier linear navigation (next/prev)
-export const flatRoutes: RouteItem[] = routes.flatMap(category => category.items);
+// Helper to recursively get all RouteItems
+function flatten(items: (RouteItem | RouteCategory)[]): RouteItem[] {
+  let result: RouteItem[] = [];
+  items.forEach(item => {
+    if ('path' in item) {
+      result.push(item);
+    } else if ('children' in item) {
+      result = result.concat(flatten(item.children));
+    }
+  });
+  return result;
+}
+
+export const flatRoutes: RouteItem[] = flatten(routes);

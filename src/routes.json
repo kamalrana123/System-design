@@ -1,15 +1,20 @@
 [
   {
-    "category": "Database Indexing",
-    "items": [
-      { "path": "/db-indexing", "title": "Indexing Intro", "file": "db-indexing/intro.md" },
-      { "path": "/db-indexing/fundamentals", "title": "Fundamentals", "file": "db-indexing/fundamentals.md" },
-      { "path": "/db-indexing/core-structures", "title": "Core Data Structures", "file": "db-indexing/core-data-structures.md" },
-      { "path": "/db-indexing/types", "title": "Types of Indexes", "file": "db-indexing/types-of-indexes.md" },
-      { "path": "/db-indexing/advanced", "title": "Advanced Concepts", "file": "db-indexing/advanced-concepts.md" },
-      { "path": "/db-indexing/optimization", "title": "Optimization", "file": "db-indexing/optimization.md" },
-      { "path": "/db-indexing/specifics", "title": "DB Specifics", "file": "db-indexing/db-specifics.md" },
-      { "path": "/db-indexing/scenarios", "title": "Design Scenarios", "file": "db-indexing/scenarios.md" }
+    "category": "Databases",
+    "children": [
+      {
+        "category": "Database Indexing",
+        "children": [
+          { "path": "/db-indexing", "title": "Indexing Intro", "file": "db-indexing/intro.md" },
+          { "path": "/db-indexing/fundamentals", "title": "Fundamentals", "file": "db-indexing/fundamentals.md" },
+          { "path": "/db-indexing/core-structures", "title": "Core Data Structures", "file": "db-indexing/core-data-structures.md" },
+          { "path": "/db-indexing/types", "title": "Types of Indexes", "file": "db-indexing/types-of-indexes.md" },
+          { "path": "/db-indexing/advanced", "title": "Advanced Concepts", "file": "db-indexing/advanced-concepts.md" },
+          { "path": "/db-indexing/optimization", "title": "Optimization", "file": "db-indexing/optimization.md" },
+          { "path": "/db-indexing/specifics", "title": "DB Specifics", "file": "db-indexing/db-specifics.md" },
+          { "path": "/db-indexing/scenarios", "title": "Design Scenarios", "file": "db-indexing/scenarios.md" }
+        ]
+      }
     ]
   }
 ]

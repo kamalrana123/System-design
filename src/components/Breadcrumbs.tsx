@@ -1,24 +1,38 @@
 import { useLocation, Link } from 'react-router-dom';
 import { routes } from '../utils/routeHelpers';
+import type { RouteItem, RouteCategory } from '../utils/routeHelpers';
 
 export default function Breadcrumbs() {
   const location = useLocation();
   const currentPath = location.pathname;
 
-  if (currentPath === '/') return null;
+  if (currentPath === '/' || currentPath === '') return null;
 
   let currentCategory = '';
   let currentTitle = '';
 
-  // Find the current route details
-  for (const section of routes) {
-    const foundItem = section.items.find((item) => item.path === currentPath);
-    if (foundItem) {
-      currentCategory = section.category;
-      currentTitle = foundItem.title;
-      break;
+  // Recursive function to find the route and its parent category
+  const findRoute = (items: (RouteItem | RouteCategory)[], parentCategory: string = ''): boolean => {
+    for (const item of items) {
+      if ('path' in item) {
+        if (item.path === currentPath) {
+          currentTitle = item.title;
+          currentCategory = parentCategory;
+          return true;
+        }
+      } else if ('children' in item) {
+        if (findRoute(item.children, item.category)) {
+          // If we found it in a sub-category, we could potentially build a longer trail,
+          // but for now let's keep it simple with the immediate parent or the top parent.
+          // To support full trails, we'd need to return an array of categories.
+          return true;
+        }
+      }
     }
-  }
+    return false;
+  };
+
+  findRoute(routes);
 
   if (!currentTitle) return null;
 
@@ -29,8 +43,12 @@ export default function Breadcrumbs() {
           <Link to="/">Home</Link>
         </li>
         <li className="separator">/</li>
-        <li className="category">{currentCategory}</li>
-        <li className="separator">/</li>
+        {currentCategory && (
+          <>
+            <li className="category">{currentCategory}</li>
+            <li className="separator">/</li>
+          </>
+        )}
         <li aria-current="page">{currentTitle}</li>
       </ol>
     </nav>
