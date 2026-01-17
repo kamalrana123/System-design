@@ -21,8 +21,13 @@ export default function MarkdownViewer({ file }: MarkdownViewerProps) {
 
   useEffect(() => {
     setLoading(true);
+    // Handle base URL for GitHub Pages deployment
+    const baseUrl = import.meta.env.BASE_URL.endsWith('/')
+      ? import.meta.env.BASE_URL
+      : `${import.meta.env.BASE_URL}/`;
+
     // Add a timestamp to avoid caching issues during development/updates
-    fetch(`/content/${file}?t=${new Date().getTime()}`)
+    fetch(`${baseUrl}content/${file}?t=${new Date().getTime()}`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load content');
         return res.text();
