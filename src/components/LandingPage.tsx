@@ -9,18 +9,6 @@ export default function LandingPage() {
             Master <span className="gradient-text">System Design</span> <br />
             & Architecture
           </h1>
-          <p className="hero-subtitle">
-            A comprehensive, interactive guide to building scalable systems. 
-            From high-level architecture to deep database internals.
-          </p>
-          <div className="hero-actions">
-            <Link to="/intro" className="btn btn-primary btn-lg">
-              Start Learning
-            </Link>
-            <Link to="/db-indexing" className="btn btn-secondary btn-lg">
-              Explore Database Indexing
-            </Link>
-          </div>
         </div>
         <div className="hero-visual">
           <div className="visual-circle"></div>
