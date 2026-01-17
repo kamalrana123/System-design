@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import CodeBlock from './CodeBlock';
 import TableOfContents from './TableOfContents';
+import Notes from './Notes';
 import { flatRoutes } from '../utils/routeHelpers';
 
 interface MarkdownViewerProps {
@@ -77,6 +78,8 @@ export default function MarkdownViewer({ file }: MarkdownViewerProps) {
               {content}
             </ReactMarkdown>
           </div>
+
+          <Notes pageId={file} />
           
           <div className="doc-navigation">
             {prevRoute ? (
